@@ -1,0 +1,158 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <style media="screen">
+   * {
+   box-sizing: border-box;
+   }
+
+   input[type=text], select, textarea {
+   width: 100%;
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   resize: vertical;
+   }
+
+   label {
+   padding: 12px 12px 12px 0;
+   display: inline-block;
+   }
+
+   input[type=submit] {
+   background-color: #4CAF50;
+   color: white;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   float: right;
+   }
+
+   input[type=submit]:hover {
+   background-color: #45a049;
+   }
+
+   .container {
+   border-radius: 5px;
+   background-color: #f2f2f2;
+   padding: 20px;
+   }
+
+   .col-25 {
+   float: left;
+   width: 25%;
+   margin-top: 6px;
+   }
+
+   .col-75 {
+   float: left;
+   width: 75%;
+   margin-top: 6px;
+   }
+
+   .row:after {
+   content: "";
+   display: table;
+   clear: both;
+   }
+
+   @media screen and (max-width: 600px) {
+   .col-25, .col-75, input[type=submit] {
+   width: 100%;
+   margin-top: 0;
+   }
+   }
+   ul {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   overflow: hidden;
+   background-color: #333;
+   }
+
+   li {
+   float: left;
+   }
+
+   li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+   }
+
+   li a:hover {
+   background-color: #111;
+   }
+   body {
+   background: lightblue url("img_tree.gif") no-repeat fixed center;
+   }
+   </style>
+   </head>
+   <body>
+    <ul>
+      <li><a class="active" href="{% url 'travel_app:index' %}">Home</a></li>
+      <li><a href="{% url 'travel_app:summery' %}">ALL BOOKINGS</a></li>
+      <li><a href="{% url 'travel_app:apidisp' %}">API's</a></li>
+      <li><a href="{% url 'travel_app:signUp' %}">SIGNUP</a></li>
+      <li><a href="{% url 'travel_app:emplist' %}">Employees</a></li>
+      <li><a href="/admin/">Admin</a></li>
+      <li><a href="{% url 'travel_app:index' %}">TRAVEL APP</a></li>
+
+
+    </ul>
+
+
+   <br><br>
+
+
+
+  <div class="container p-3 my-3 bg-dark text-white">
+    <form class="align-items-cente" action="" method="post">
+
+        {% csrf_token %}
+        <h1>Register For Job</h1> <br>
+      <label for="username">USERNAME :</label>
+      <input type="text" name="username" value=""><br>
+      <label for="password">PASSWORD :</label>
+      <input type="text" name="password" value=""><br>
+      <label for="name">NAME :</label>
+      <input type="text" name="name" value=""><br>
+      <label for="carmod">CAR :</label>
+      <input type="text" name="carmod" value=""><br>
+      <label for="carnum">VEHICLE NUMBER :</label>
+      <input type="text" name="carnum" value=""><br>
+      <label for="phno">CONTACT :</label>
+      <input type="text" name="phno" value=""><br>
+      <label for="loc">LOCATION :</label>
+      <input type="text" name="loc" value=""><br>
+      <input type="submit" name="Submit" value="Submit">
+
+
+
+    </form>
+    </div>
+    <br>
+
+
+  </body>
+
+
+
+
+<script type="text/javascript">
+function redirect(){
+  location.replace("{% url 'travel_app:index' %}");
+}
+
+</script>
+
+</html>
